@@ -1,0 +1,20 @@
+/Library
+/Logs
+/obj
+/Temp
+/Build
+*.log
+/Logs/*
+*.csproj
+ProjectSettings/ProjectVersion.txt
+.vs/Projects - Shortcut.lnk
+.vs/*
+/Builds
+/Assets/Firebase
+/Assets/Firebase.rar
+/AssetBundles/*
+/Assets/Editor Default Resources
+/Assets/ExternalDependencyManager
+/Assets/Plugins/Android/*
+/Assets/Plugins/tvOs/*
+/Assets/Plugins/iOS/*
