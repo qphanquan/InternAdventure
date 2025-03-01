@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.Device;
 using UnityEngine.SceneManagement;
@@ -14,6 +15,7 @@ public class GUIManager : MonoSingleton<GUIManager>
         base.Awake();
         this.ClearScreens();
     }
+
     private T LoadPrefabs<T>() where T : ScreenBase
     {
         if (!this._screens.ContainsKey(typeof(T)))

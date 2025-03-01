@@ -15,6 +15,7 @@ public class ScreenBase : MonoBehaviour
 
     public virtual void Hide()
     {
-        this.gameObject.SetActive(false);
+        //this.gameObject.SetActive(false);
+        Destroy(this.gameObject);
     }
 }

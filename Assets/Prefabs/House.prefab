@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7714272881152183727}
   - component: {fileID: 7495022188813295260}
   - component: {fileID: 8367923034916061876}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: HouseCube_04
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -115,7 +115,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8825304413407526281}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Door_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -150,7 +150,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8265839151958251135}
   - component: {fileID: 1051984704192383784}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: House
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -214,7 +214,7 @@ GameObject:
   - component: {fileID: 7679887729609294386}
   - component: {fileID: 1657853003787639935}
   - component: {fileID: 4415627940568271999}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: HouseCube_04 (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -320,7 +320,7 @@ GameObject:
   - component: {fileID: 693957076237062608}
   - component: {fileID: 1038239445040780952}
   - component: {fileID: 4874482286206078565}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: HouseCube_04 (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -426,7 +426,7 @@ GameObject:
   - component: {fileID: 5416564425022350203}
   - component: {fileID: 4745295472924179595}
   - component: {fileID: 6833002679334379873}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: HouseCube_04 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -532,7 +532,7 @@ GameObject:
   - component: {fileID: 3259021280729599941}
   - component: {fileID: 6886293866194792323}
   - component: {fileID: 4525211442621991535}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube_Stairs (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -638,7 +638,7 @@ GameObject:
   - component: {fileID: 7094185676542290116}
   - component: {fileID: 2353041591487748814}
   - component: {fileID: 3798669843989768642}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: HouseCube_04 (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -744,7 +744,7 @@ GameObject:
   - component: {fileID: 8598398709040231671}
   - component: {fileID: 5052776929066875417}
   - component: {fileID: 5249125052905030668}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: HouseCube_04 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -850,7 +850,7 @@ GameObject:
   - component: {fileID: 391128370511739701}
   - component: {fileID: 3423813863164735341}
   - component: {fileID: 7741963727295643893}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube_Stairs
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -956,6 +956,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Door_01
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 52eba2f046349d74c9d22e8743108057, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 52eba2f046349d74c9d22e8743108057, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -1056,6 +1060,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Door_02
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: b52e252fb53a5584a8a3fb00426ab857, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: b52e252fb53a5584a8a3fb00426ab857, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -1155,6 +1163,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 034b391ba1a9da444ab1b367ce2ac06a, type: 3}
       propertyPath: m_Name
       value: Door_03
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 034b391ba1a9da444ab1b367ce2ac06a, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 034b391ba1a9da444ab1b367ce2ac06a, type: 3}
       propertyPath: m_RootOrder

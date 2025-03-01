@@ -21,16 +21,19 @@ public class PlayerController : MonoBehaviour
     private bool _isJoystick;
     private bool _isDie;
 
-    public void ReloadPlayer(int level)
+    public void ReloadPlayer()
     {
         if(this._characters == null)
             this._characters = this.GetComponent<CharacterController>();
 
+        this.transform.localScale = Vector3.one;
+        this.transform.localEulerAngles = Vector3.zero;
         this._startPosPlayer = this.transform.position;
         this.anim.gameObject.SetActive(false);
+        this.anim.gameObject.SetActive(true);
         this._isJoystick = true;
         this._isDie = false;
-        this.anim.gameObject.SetActive(true);
+        this._isJumping = false;
     }
 
     void Update()
@@ -42,19 +45,15 @@ public class PlayerController : MonoBehaviour
         moveDirection.Normalize();
         this._characters.SimpleMove(moveDirection * this._moveSpeed);
 
-        if (this.transform.position.y <= -8.5f)
+        if (this.transform.position.y <= -7f)
         {
-            //GameController.Instance.StartGame();
             Debug.LogError("ENDGAME");
+            SoundEfxManager.Instance.PlaySoundLose();
+            GameController.Instance.EndGame();
             this._isJoystick = false;
         }
 
-        if ((this._characters.collisionFlags & CollisionFlags.Sides) != 0)
-        {
-            Debug.LogError("WIN");
-            this._isJoystick = false;
-            //GameController.Instance.StartGame();
-        }
+        GameController.Instance.CheckShowParticle(this.transform.position.z);
 
         if (!this._isDie)
         {
@@ -71,7 +70,7 @@ public class PlayerController : MonoBehaviour
                 this.transform.rotation = Quaternion.LookRotation(targetDirection);
             }
 
-            if (this._isJumping)
+            if (this._isJumping && this.transform.position.y > 0)
             {
                 this._movingDirectionJump.y -= this._gravity * Time.deltaTime;
                 this._characters.Move(this._movingDirectionJump * Time.deltaTime);
@@ -80,6 +79,9 @@ public class PlayerController : MonoBehaviour
                     this._isJumping = false;
                 }
             }
+            else
+                this._isJumping = false;
+
 
             if (!this._characters.isGrounded && !this._isJumping)
             {
@@ -94,8 +96,25 @@ public class PlayerController : MonoBehaviour
 
     public void OnJumpBtnClick()
     {
+        if (this._isJumping)
+            return;
+
+        SoundEfxManager.Instance.PlaySoundJump();
         this.anim.SetTrigger("Jump");
         this._movingDirectionJump.y = this._jumpHeight;
         this._isJumping = true;
+    }
+
+    private void OnControllerColliderHit(ControllerColliderHit hit)
+    {
+        if ((this._characters.collisionFlags & CollisionFlags.Sides) != 0 && hit.gameObject.layer == LayerMask.NameToLayer("House"))
+        {
+            Debug.LogError("WIN");
+            this._isJoystick = false;
+            SoundEfxManager.Instance.PlaySoundWin();
+            MainPlayerInfo.Instance.NextLevel();
+            GameController.Instance.StartGame();
+            //this.anim.gameObject.SetActive(false);
+        }
     }
 }
