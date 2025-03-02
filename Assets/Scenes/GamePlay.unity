@@ -413,6 +413,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BrickPref: {fileID: 2773559099932525971, guid: 3ac15664afcf479419ddc083f3cbb225, type: 3}
   Destination: {fileID: 937505101019066817, guid: fc1fce018c6778f4591b90a077efbea7, type: 3}
+  ObstaclePref: {fileID: 9172707598873118595, guid: 584fb5b32eae94247ad1219d0a594cd5, type: 3}
 --- !u!1 &319947425
 GameObject:
   m_ObjectHideFlags: 0

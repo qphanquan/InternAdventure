@@ -65,6 +65,7 @@ public class GameController : MonoSingleton<GameController>
     {
         this.MapGenerator.ClearMap();
         GUIManager.Instance.HideScreen<ScreenMain>();
+        this.ConfettiVfx.gameObject.SetActive(false);
         GUIManager.Instance.ShowScreen<PopupEndGame>(MainPlayerInfo.Instance.GetPlayer());
         this._camera.transform.position = this._currentPosCamera;
         this.PlayerController.transform.position = Vector3.zero;

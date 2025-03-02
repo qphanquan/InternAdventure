@@ -20,6 +20,7 @@ public class PlayerController : MonoBehaviour
     private bool _isJumping;
     private bool _isJoystick;
     private bool _isDie;
+    private bool _isDieObstacle;
 
     public void ReloadPlayer()
     {
@@ -45,7 +46,7 @@ public class PlayerController : MonoBehaviour
         moveDirection.Normalize();
         this._characters.SimpleMove(moveDirection * this._moveSpeed);
 
-        if (this.transform.position.y <= -7f)
+        if (this.transform.position.y <= -7f || (this._isDieObstacle && this.transform.position.y < -4f))
         {
             Debug.LogError("ENDGAME");
             SoundEfxManager.Instance.PlaySoundLose();
@@ -57,6 +58,8 @@ public class PlayerController : MonoBehaviour
 
         if (!this._isDie)
         {
+            this._isDieObstacle = GameController.Instance.MapGenerator.CheckObstacle(this.transform.position.z);
+
             if (moveDirection.magnitude == 0)
             {
                 this.anim.SetBool("isMoving", false);
@@ -96,9 +99,8 @@ public class PlayerController : MonoBehaviour
 
     public void OnJumpBtnClick()
     {
-        if (this._isJumping)
+        if (this._isJumping || !this._characters.isGrounded)
             return;
-
         SoundEfxManager.Instance.PlaySoundJump();
         this.anim.SetTrigger("Jump");
         this._movingDirectionJump.y = this._jumpHeight;
